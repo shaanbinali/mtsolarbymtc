@@ -13,5 +13,19 @@
       "monthly_bill": "3500",
       "roof_type": "rcc_terrace"
     }
+  },
+  {
+    "lead_id": "MTC-1791755004390",
+    "form_type": "site_survey",
+    "source_page": "/index.html",
+    "source_title": "M.T. Solar by MTC - West Bengal's Trusted Rooftop Solar Company",
+    "submitted_at": "2026-10-12 03:13:24",
+    "client_ip": "127.0.0.1",
+    "fields": {
+      "name": "aa",
+      "phone": "7003245612",
+      "pincode": "700144",
+      "bill_range": "2500-5000"
+    }
   }
 ]

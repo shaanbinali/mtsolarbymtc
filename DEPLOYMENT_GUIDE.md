@@ -1,166 +1,139 @@
 # M.T. Solar by MTC — GitHub & Cloudflare Pages Deployment Guide
 
-This guide walks you through deploying the **M.T. Solar by MTC** website and its unified forms backend using **GitHub** and **Cloudflare Pages** in the simplest, most reliable way possible.
+This guide walks you through deploying the **M.T. Solar by MTC** website with its unified serverless backend:
+1. **GitHub Repository** for version control.
+2. **Cloudflare Pages** for free global hosting, automatic SSL, and zero maintenance.
+3. **Direct Email Delivery** to `mtsolarbymtc@gmail.com` and `contact@mtsolarbymtc.com`.
+4. **Cloudflare D1 Database** to store all leads natively in a private SQLite database inside Cloudflare (with instant CSV spreadsheet download).
 
----
-
-## 🌟 Why This Architecture?
-- **Zero Cost**: 100% free hosting, global CDN, and 100,000 free serverless form submissions per day on Cloudflare.
-- **No Complex Servers**: No Apache, Nginx, Docker, or Node build pipelines required.
-- **Automatic SSL**: Free lifetime HTTPS for your custom domain.
-- **Serverless Backend Included**: The `/functions/api/submit-lead.js` endpoint runs automatically on Cloudflare Pages Functions.
+*(No Google Sheets, no complex servers, zero monthly fees!)*
 
 ---
 
 ## Part 1: Push Code to GitHub
 
-### Step 1.1: Open your terminal and navigate to the project directory
+### Step 1.1: Initialize Git and commit all files
+Run in your terminal from the project folder:
 ```bash
 cd /Users/shahnawazkhan/.gemini/antigravity/scratch/mt-solar-website
-```
-
-### Step 1.2: Initialize Git and commit all files
-```bash
-git init
 git add .
-git commit -m "feat: complete M.T. Solar website with unified Cloudflare backend"
-git branch -M main
+git commit -m "feat: unified lead backend with Cloudflare D1 and direct email delivery"
 ```
 
-### Step 1.3: Create a new repository on GitHub
+### Step 1.2: Create a new repository on GitHub
 1. Log in to your GitHub account at [github.com](https://github.com).
-2. Click the **`+`** icon in the top right corner and select **New repository**.
-3. Name it (for example: `mt-solar-website`).
-4. Keep it **Public** or **Private** (both work with Cloudflare Pages).
-5. **Do NOT** initialize with README, .gitignore, or license (we already have our project files).
+2. Click the **`+`** icon in the top right corner and choose **New repository**.
+3. Repository name: `mt-solar-website` (or your choice).
+4. Select **Public** or **Private**.
+5. Leave all checkboxes (README, .gitignore, license) unchecked.
 6. Click **Create repository**.
 
-### Step 1.4: Link and push your local code to GitHub
-Run the commands shown on GitHub (replace `<YOUR_USERNAME>` and `<REPO_NAME>` with your details):
+### Step 1.3: Push your code to GitHub
+Run the commands provided by GitHub (replace `<YOUR_USERNAME>` with your GitHub username):
 ```bash
-git remote add origin https://github.com/<YOUR_USERNAME>/<REPO_NAME>.git
+git remote add origin https://github.com/<YOUR_USERNAME>/mt-solar-website.git
 git push -u origin main
 ```
 
 ---
 
-## Part 2: Deploy on Cloudflare Pages (3 Clicks)
+## Part 2: Deploy to Cloudflare Pages (3 Clicks)
 
 ### Step 2.1: Connect GitHub in Cloudflare
 1. Log in to [dash.cloudflare.com](https://dash.cloudflare.com).
 2. In the left navigation menu, click **Workers & Pages**.
 3. Click **Create application** -> select the **Pages** tab -> click **Connect to Git**.
-4. Select your GitHub account and choose the repository `mt-solar-website`.
+4. Select your GitHub account and choose the `mt-solar-website` repository.
 5. Click **Begin setup**.
 
 ### Step 2.2: Configure Build Settings
-Fill in the configuration fields:
-- **Project name**: `mt-solar-website` (or your choice)
+Fill in the deployment settings:
+- **Project name**: `mt-solar-website`
 - **Production branch**: `main`
 - **Framework preset**: `None`
-- **Build command**: *(Leave completely empty)*
-- **Build output directory**: `.` *(or leave as root)*
+- **Build command**: *(Leave completely blank)*
+- **Build output directory**: `.` *(Leave blank / root)*
 
-### Step 2.3: Deploy!
 Click **Save and Deploy**.
-Within 30–60 seconds, your site will be live at `https://mt-solar-website.pages.dev`!
-
-> [!NOTE]
-> Cloudflare Pages will automatically detect the `/functions` directory and deploy `POST /api/submit-lead` as a live serverless API at `https://<your-project>.pages.dev/api/submit-lead`.
+Within 30–60 seconds, your site is live globally at `https://mt-solar-website.pages.dev`!
 
 ---
 
-## Part 3: Connecting Leads to Google Sheets (Recommended & Free)
+## Part 3: Set Up Cloudflare D1 Database (Private Native Database)
 
-To receive every lead directly into a Google Spreadsheet in real time:
+Cloudflare D1 is Cloudflare's serverless SQLite database. It is 100% free (5 million queries/month, 10 GB storage) and keeps all your leads privately inside your Cloudflare account.
 
-### Step 3.1: Create a Google Sheet
-1. Open [Google Sheets](https://sheets.new) and create a new spreadsheet named `M.T. Solar - Inbound Leads`.
-2. In Row 1, add these column headers:
-   - `A1`: `Date & Time`
-   - `B1`: `Lead ID`
-   - `C1`: `Form Type`
-   - `D1`: `Name / Company`
-   - `E1`: `Mobile Phone`
-   - `F1`: `PIN Code`
-   - `G1`: `Monthly Bill / Sanctioned Load`
-   - `H1`: `Roof / Details`
-   - `I1`: `WBSEDCL Consumer ID`
-   - `J1`: `Source Page`
+### Step 3.1: Create the D1 Database
+1. In Cloudflare Dashboard, go to **Storage & Databases** -> **D1 SQL Database**.
+2. Click **Create database**.
+3. Name it: `mt_solar_leads`
+4. Click **Create**.
 
-### Step 3.2: Add Google Apps Script Webhook
-1. In your Google Sheet, click **Extensions** -> **Apps Script**.
-2. Replace all code in the editor with this script:
+### Step 3.2: Bind the Database to Cloudflare Pages
+1. Go back to **Workers & Pages** -> click your `mt-solar-website` project.
+2. Go to **Settings** -> **Functions**.
+3. Scroll down to **D1 database bindings** -> click **Add binding**.
+4. Set:
+   - **Variable name**: `DB` *(Must be uppercase `DB`)*
+   - **D1 database**: Select `mt_solar_leads`
+5. Click **Save**.
 
-```javascript
-function doPost(e) {
-  try {
-    var data = JSON.parse(e.postData.contents);
-    var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    var f = data.fields || {};
+🎉 **That's it!** The backend endpoint `/api/submit-lead` will automatically create the `leads` table and securely store every form submission (Site Surveys, PM Surya Ghar Subsidies, Commercial Inquiries, Referrals, and Applications).
 
-    sheet.appendRow([
-      data.submitted_at || new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
-      data.lead_id || "",
-      data.form_type || "",
-      f.name || f.company || f.society || f.representative || f.referrer_name || "",
-      f.phone || f.referrer_phone || "",
-      f.pincode || f.area || f.friend_location || f.location || "",
-      f.monthly_bill || f.load || "",
-      f.roof_type || f.purpose || f.position || f.message || "",
-      f.consumer_id || "",
-      data.source_page || ""
-    ]);
+### Step 3.3: How to View & Download Your Leads
+You have two simple ways to access your leads:
+1. **From Cloudflare Dashboard**:
+   - Go to **Storage & Databases** -> **D1** -> `mt_solar_leads` -> **Explore data** -> Table `leads`.
+   - You can view all rows or click **Export**.
+2. **One-Click CSV Download Link**:
+   - Visit: `https://<your-project>.pages.dev/api/export-leads?key=mtc_solar_admin_2026`
+   - It instantly downloads `mt_solar_leads_YYYY-MM-DD.csv`, which opens directly in Microsoft Excel or Apple Numbers!
+   *(You can change the secret key anytime by adding the environment variable `ADMIN_EXPORT_KEY` in Pages Settings).*
 
-    return ContentService.createTextOutput(JSON.stringify({ result: "success" }))
-      .setMimeType(ContentService.MimeType.JSON);
-  } catch (err) {
-    return ContentService.createTextOutput(JSON.stringify({ result: "error", error: err.toString() }))
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-```
+---
 
-3. Click **Deploy** (top right) -> **New deployment**.
-4. Click the gear icon next to "Select type" -> choose **Web app**.
-5. Set:
-   - **Execute as**: `Me`
-   - **Who has access**: `Anyone` *(Crucial: allows Cloudflare to post new leads)*
-6. Click **Deploy** -> Authorize access with your Google account -> Copy the **Web App URL** (looks like `https://script.google.com/macros/s/AKfycb.../exec`).
+## Part 4: Set Up Direct Email Notifications to Your Inboxes
 
-### Step 3.3: Add Webhook to Cloudflare Pages
+Whenever a customer fills out any form on the site, you will receive an instant, formatted email notification with their details and one-tap **Call Customer** / **WhatsApp** buttons.
+
+We recommend **Resend** (free, 3,000 emails/month, 30-second setup):
+
+### Step 4.1: Get a Free Resend API Key
+1. Go to [resend.com](https://resend.com) and sign up (takes 30 seconds).
+2. Go to **API Keys** -> click **Create API Key**.
+3. Copy the key (starts with `re_...`).
+
+### Step 4.2: Add the Key to Cloudflare Pages
 1. In Cloudflare Dashboard, go to **Workers & Pages** -> click your `mt-solar-website` project.
 2. Go to **Settings** -> **Environment variables**.
 3. Under **Production**, click **Add variable**:
-   - Variable name: `GOOGLE_SHEET_WEBHOOK_URL`
-   - Value: *(Paste your Google Web App URL)*
-4. Click **Save**.
+   - Variable name: `RESEND_API_KEY`
+   - Value: *(Paste your `re_...` API key)*
+4. (Optional) Add `LEAD_NOTIFICATION_EMAILS`:
+   - Value: `mtsolarbymtc@gmail.com, contact@mtsolarbymtc.com, sales@mtsolarbymtc.com`
+5. Click **Save**.
 
-🎉 **Done!** Every time a customer submits a survey request, subsidy application, commercial inquiry, or partner request on the website, it will instantly add a new row to your Google Sheet!
+*(Alternative Email Providers Supported)*: If you prefer Brevo or Web3Forms, simply set `BREVO_API_KEY` or `WEB3FORMS_ACCESS_KEY` instead.
 
 ---
 
-## Part 4: Connecting Custom Domain (e.g. `mtsolarbymtc.com`)
+## Part 5: Connect Custom Domain (`mtsolarbymtc.com`)
 
 1. In Cloudflare Pages, go to the **Custom domains** tab.
 2. Click **Set up a custom domain**.
-3. Enter your domain (e.g. `mtsolarbymtc.com` and `www.mtsolarbymtc.com`).
-4. Follow the automatic DNS setup. Cloudflare configures free, permanent SSL/HTTPS encryption.
+3. Enter `mtsolarbymtc.com` (and `www.mtsolarbymtc.com`).
+4. Cloudflare automatically sets up DNS routing and provisions free lifetime SSL/HTTPS certificates.
 
 ---
 
-## Part 5: Local Offline Testing (Before or After Deploying)
+## Part 6: Local Development & Offline Testing
 
-You can test the entire site and forms locally on your computer at any time:
+To test the website, forms, and database locally on your computer:
 
-1. Run the local dev server:
-   ```bash
-   python3 dev-server.py 8080
-   ```
-2. Open your browser at:
-   - `http://localhost:8080/`
-   - `http://localhost:8080/pm-surya-ghar.html`
-   - `http://localhost:8080/solutions/on-grid.html`
-3. Submit any form.
-4. Leads are immediately logged in your terminal and saved to `data/leads.json`.
-5. View all saved leads in your browser at `http://localhost:8080/api/leads`.
+```bash
+python3 dev-server.py 8080
+```
+- Open `http://localhost:8080/` in your browser.
+- Submit any form (Site Survey, PM Surya Ghar subsidy, Commercial inquiry, etc.).
+- Watch the colorized lead print in your terminal and save to `data/leads.json`.
+- Download CSV locally at `http://localhost:8080/api/export-leads`.

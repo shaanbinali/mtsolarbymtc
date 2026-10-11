@@ -73,6 +73,32 @@ class DevHandler(http.server.SimpleHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(content.encode('utf-8'))
             return
+        if parsed.path == '/api/export-leads':
+            ensure_data_dir()
+            try:
+                with open(LEADS_FILE, 'r', encoding='utf-8') as f:
+                    leads = json.load(f)
+            except Exception:
+                leads = []
+            headers = ['Lead ID', 'Form Type', 'Source Page', 'Submitted At', 'Phone', 'Data']
+            lines = [','.join(f'"{h}"' for h in headers)]
+            for item in leads:
+                flds = item.get('fields', {})
+                lines.append(','.join([
+                    f'"{item.get("lead_id", "")}"',
+                    f'"{item.get("form_type", "")}"',
+                    f'"{item.get("source_page", "")}"',
+                    f'"{item.get("submitted_at", "")}"',
+                    f'"{flds.get("phone", "")}"',
+                    f'"{json.dumps(flds).replace(chr(34), chr(34)+chr(34))}"'
+                ]))
+            csv_data = '\r\n'.join(lines).encode('utf-8')
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/csv; charset=utf-8')
+            self.send_header('Content-Disposition', 'attachment; filename="leads.csv"')
+            self.end_headers()
+            self.wfile.write(csv_data)
+            return
         super().do_GET()
 
     def do_POST(self):
