@@ -8,31 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"DM Sans"', 'sans-serif'],
-            display: ['"Poppins"', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              navy: '#182150',
-              navyDark: '#0f172a',
-              yellow: '#FFC800',
-              gold: '#EAB308',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="stylesheet" href="assets/css/custom.css">
+  <!-- High-Performance Precompiled CSS Bundle -->
+  <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body class="font-sans text-slate-800 antialiased bg-slate-50 selection:bg-amber-400 selection:text-slate-900">
 
@@ -43,7 +24,7 @@
         
         <!-- Brand Logo -->
         <a href="index.html" class="flex-shrink-0 flex items-center group">
-          <img src="assets/images/logo.svg" alt="M.T. Solar by MTC Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+          <img loading="lazy" decoding="async" src="assets/images/logo.svg" alt="M.T. Solar by MTC Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
         </a>
 
         <!-- Desktop Navigation -->
@@ -270,7 +251,7 @@
         <!-- Brand Info -->
         <div class="lg:col-span-2">
           <div class="flex items-center space-x-2 mb-4">
-            <img src="assets/images/logo.svg" alt="M.T. Solar by MTC" class="h-10 w-auto bg-white p-1 rounded">
+            <img loading="lazy" decoding="async" src="assets/images/logo.svg" alt="M.T. Solar by MTC" class="h-10 w-auto bg-white p-1 rounded">
           </div>
           <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
             M.T. Solar by MTC is the rooftop solar vertical by <strong>M. T. Construction</strong>, building on 25 years of electrical government contracting and WBSEDCL/WBSETCL enlistment foundation in West Bengal.
@@ -380,6 +361,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

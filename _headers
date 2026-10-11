@@ -1,0 +1,19 @@
+# Cloudflare Pages Caching & Performance Headers
+
+# Long-term caching for immutable assets (CSS, JS, SVG, Fonts)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# Revalidate HTML pages to ensure updates are instantly visible
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Global Security & Performance Headers
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin

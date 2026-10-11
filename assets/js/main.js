@@ -11,16 +11,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Sticky Navbar scroll effect
+  // 2. Sticky Navbar scroll effect (60fps passive requestAnimationFrame)
   const navbar = document.getElementById('navbar');
   if (navbar) {
+    let ticking = false;
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        navbar.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur');
-      } else {
-        navbar.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur');
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 20) {
+            navbar.classList.add('shadow-md', 'bg-white/95', 'backdrop-blur');
+          } else {
+            navbar.classList.remove('shadow-md', 'bg-white/95', 'backdrop-blur');
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-    });
+    }, { passive: true });
   }
 
   // 2b. Dropdown click & hover persistence (prevents disappearing before click)

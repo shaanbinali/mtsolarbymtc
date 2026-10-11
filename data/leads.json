@@ -27,5 +27,19 @@
       "pincode": "700144",
       "bill_range": "2500-5000"
     }
+  },
+  {
+    "lead_id": "MTC-1791755502272",
+    "form_type": "site_survey",
+    "source_page": "/index.html",
+    "source_title": "M.T. Solar by MTC - West Bengal's Trusted Rooftop Solar Company",
+    "submitted_at": "2026-10-12 03:21:42",
+    "client_ip": "127.0.0.1",
+    "fields": {
+      "name": "shaan",
+      "phone": "9903083731",
+      "pincode": "700144",
+      "bill_range": "below-2500"
+    }
   }
 ]
