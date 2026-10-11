@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Solar Array Icon -->
+  <g transform="translate(10, 8)">
+    <!-- Tilted Solar Cells Grid in Deep Navy / Charcoal -->
+    <g transform="skewX(-14) rotate(-5 25 30)">
+      <rect x="2" y="2" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="21" y="2" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="40" y="2" width="16" height="16" rx="2" fill="#182150" />
+      
+      <rect x="2" y="21" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="21" y="21" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="40" y="21" width="16" height="16" rx="2" fill="#182150" />
+      
+      <rect x="2" y="40" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="21" y="40" width="16" height="16" rx="2" fill="#182150" />
+      <rect x="40" y="40" width="16" height="16" rx="2" fill="#182150" />
+    </g>
+    <!-- Vibrant Sun / Diamond Solar Spark at Top Right -->
+    <path d="M52 2 L61 11 L52 20 L43 11 Z" fill="#FFC800" stroke="#FFFFFF" stroke-width="1.5" />
+  </g>
+  
+  <!-- Typography -->
+  <text x="82" y="38" font-family="'Poppins', sans-serif" font-weight="800" font-size="24" fill="#182150" letter-spacing="0.5">M.T. SOLAR</text>
+  <text x="83" y="56" font-family="'Poppins', sans-serif" font-weight="700" font-size="12" fill="#EAB308" letter-spacing="2.5">BY M.T.C.</text>
+</svg>

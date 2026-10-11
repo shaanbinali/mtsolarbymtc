@@ -1,0 +1,17 @@
+[
+  {
+    "lead_id": "TEST-101",
+    "form_type": "site_survey",
+    "source_page": "/solutions/on-grid.html",
+    "source_title": "On-Grid Solar Systems",
+    "submitted_at": "2026-10-12 03:00:00",
+    "client_ip": "127.0.0.1",
+    "fields": {
+      "name": "Subrata Ghosh",
+      "phone": "9083326210",
+      "pincode": "743331",
+      "monthly_bill": "3500",
+      "roof_type": "rcc_terrace"
+    }
+  }
+]

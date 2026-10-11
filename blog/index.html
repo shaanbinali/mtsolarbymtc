@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Knowledge Hub &amp; Blog - M.T. Solar by MTC</title>
+  <meta name="description" content="Explore expert articles on rooftop solar installation, pricing in West Bengal, PM Surya Ghar subsidies, and net-metering guides.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            display: ['"Poppins"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#182150',
+              navyDark: '#0f172a',
+              yellow: '#FFC800',
+              gold: '#EAB308',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white selection:bg-amber-400 selection:text-slate-900">
+
+  <!-- Header -->
+      <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Brand Logo -->
+        <a href="../index.html" class="flex-shrink-0 flex items-center group">
+          <img src="../assets/images/logo.svg" alt="M.T. Solar by MTC Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden xl:flex items-center space-x-7 text-sm font-medium text-slate-700">
+          
+          <a href="../index.html" class="hover:text-brand-navy transition">Home</a>
+
+          <!-- Our Offerings Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-brand-navy py-2 transition focus:outline-none">
+              <span>Our Offerings</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 hidden group-hover:block animate-fade-in z-50">
+              <a href="../offerings/homes.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-house-chimney text-amber-500 mr-2 text-xs"></i>Residential
+              </a>
+              <a href="../offerings/commercial.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-building text-amber-500 mr-2 text-xs"></i>Commercial
+              </a>
+              <a href="../offerings/housing-societies.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-city text-amber-500 mr-2 text-xs"></i>Housing Societies
+              </a>
+            </div>
+          </div>
+
+          <!-- Solar Solutions Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-brand-navy py-2 transition focus:outline-none">
+              <span>Solar Solutions</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 hidden group-hover:block animate-fade-in z-50">
+              <a href="../solutions/on-grid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-network-wired text-blue-500 mr-2 text-xs"></i>On-Grid Solar (Net-Meter)
+              </a>
+              <a href="../solutions/off-grid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-car-battery text-amber-500 mr-2 text-xs"></i>Off-Grid Solar (Battery)
+              </a>
+              <a href="../solutions/hybrid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-arrows-split-up-and-left text-green-500 mr-2 text-xs"></i>Hybrid Solar
+              </a>
+            </div>
+          </div>
+
+          <a href="../blog/index.html" class="hover:text-brand-navy transition">Blog</a>
+          <a href="../contact.html" class="hover:text-brand-navy transition">Contact</a>
+        </nav>
+
+        <!-- CTA Header Action -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <a href="../index.html#quote-form" class="bg-brand-navy hover:bg-slate-900 text-white font-medium py-2.5 px-6 rounded-lg text-sm transition shadow-sm hover:shadow flex items-center space-x-2">
+            <span>Get Free Quote</span>
+            <i class="fa-solid fa-arrow-right text-xs text-brand-yellow"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <div class="xl:hidden flex items-center space-x-3">
+          <a href="../index.html#quote-form" class="bg-brand-yellow text-brand-navy font-bold text-xs py-2 px-3 rounded-lg md:hidden">Free Quote</a>
+          <button id="mobile-menu-btn" aria-label="Toggle navigation" class="text-slate-800 p-2 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+      <div class="grid grid-cols-2 gap-2 text-sm font-semibold">
+        <a href="../index.html" class="p-2.5 rounded-lg bg-amber-50 text-brand-navy">Home</a>
+        <a href="../calculator.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Solar Calculator</a>
+        <a href="../offerings/homes.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Residential</a>
+        <a href="../offerings/commercial.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Commercial</a>
+        <a href="../solutions/on-grid.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">On-Grid Solar</a>
+        <a href="../solutions/off-grid.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Off-Grid Solar</a>
+        <a href="../pm-surya-ghar.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">PM Surya Ghar</a>
+        <a href="../about.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">About MTC</a>
+        <a href="../projects.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Our Projects</a>
+        <a href="../blog/index.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Blog Hub</a>
+        <a href="../contact.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Contact Us</a>
+      </div>
+      <div class="pt-2">
+        <a href="../index.html#quote-form" class="block w-full text-center bg-brand-navy text-white font-semibold py-3 rounded-lg text-sm">
+          Request Site Survey &amp; Quote
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <nav class="text-xs text-slate-400 mb-6 flex items-center space-x-2">
+        <a href="../index.html" class="hover:text-white">Home</a>
+        <span>/</span>
+        <span class="text-amber-400 font-medium">Solar Knowledge Hub</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <span class="px-3 py-1 bg-amber-400/20 text-amber-300 text-xs font-bold rounded-full mb-4 inline-block border border-amber-400/30">Engineering Knowledge Hub</span>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight mb-4">
+            West Bengal Solar Insights &amp; Consumer Guides
+          </h1>
+          <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+            Clear, honest technical articles written by our field engineering team on rooftop solar sizing, WBSEDCL net-metering slabs, central subsidies, and inverter care.
+          </p>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-800/90">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="Solar energy technical documentation and rooftop installation" 
+                 class="w-full h-56 object-cover">
+            <div class="p-5 text-xs text-slate-300 space-y-2">
+              <div class="flex items-center justify-between pb-2 border-b border-slate-700">
+                <span class="font-bold text-amber-400 uppercase text-[11px] tracking-wide">WBSEDCL Technical Guides</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-semibold">Free Resources</span>
+              </div>
+              <p class="leading-relaxed text-slate-300">
+                Practical guides covering net-meter tariffs, tropical storm mounting standards, and PM Surya Ghar application steps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Articles Grid -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- 1. Installation -->
+        <a href="solar-installation.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Installation</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-amber-600 transition">Solar Installation Step-by-Step SOP Guide</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">What happens on your roof during a 3 kW or 5 kW solar installation? Safety, wiring, and structural steps.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-amber-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 2. Pricing -->
+        <a href="solar-pricing.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Pricing</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-blue-600 transition">Solar Pricing in West Bengal: Realistic Cost Breakdown</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Understand the realistic costs per watt, balance-of-system expenses, and net costs after PM Surya Ghar subsidy.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-blue-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 3. Government Subsidies -->
+        <a href="government-subsidies.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Subsidies</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-emerald-600 transition">How to Claim the ₹78,000 PM Surya Ghar Subsidy</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Avoid common paperwork rejections. National portal guidelines for WBSEDCL electricity consumers.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-emerald-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 4. Solar Technology -->
+        <a href="solar-technology.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Technology</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-purple-600 transition">Mono-PERC vs TOPCon Modules Compared</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Which solar cell technology generates higher units during hot, humid Bengal summer afternoons?</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-purple-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 5. Maintenance -->
+        <a href="maintenance.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded">Maintenance</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-amber-600 transition">Solar Panel Cleaning &amp; Upkeep in Coastal Bengal</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">Dealing with dust, bird droppings, and monsoon algae without scratching photovoltaic glass.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-amber-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 6. Financing and ROI -->
+        <a href="financing-and-roi.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Financing</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-blue-600 transition">Solar Loans, Low EMIs &amp; True Payback Calculations</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">How your electricity bill savings pay your monthly solar loan EMI from Month 1.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-blue-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 7. Commercial Solar -->
+        <a href="commercial-solar.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Commercial</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-emerald-600 transition">Commercial Rooftop Solar: Slashing High Tariffs</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">How MSMEs, schools, and cold storages leverage 40% accelerated depreciation.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-emerald-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+        <!-- 8. Solar Education -->
+        <a href="solar-education.html" class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition duration-300 flex flex-col justify-between group">
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Education</span>
+            <h3 class="text-base font-bold font-display text-brand-navy mt-3 mb-2 group-hover:text-purple-600 transition">Demystifying Net-Metering &amp; Bi-directional Meters</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">How WBSEDCL counts exported solar units and credits your electricity bill.</p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-brand-navy">
+            <span>Read Guide</span>
+            <i class="fa-solid fa-arrow-right text-purple-500 group-hover:translate-x-1 transition-transform"></i>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+          <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t-4 border-brand-yellow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="../assets/images/logo.svg" alt="M.T. Solar by MTC" class="h-10 w-auto bg-white p-1 rounded">
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
+            M.T. Solar by MTC is the rooftop solar vertical by <strong>M. T. Construction</strong>, building on 25 years of electrical government contracting and WBSEDCL/WBSETCL enlistment foundation in West Bengal.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-800/90 border border-amber-400/40 mb-5 max-w-sm">
+            <div class="text-[11px] uppercase tracking-wider text-amber-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-award"></i> NATIONAL PORTAL EMPANELED VENDOR
+            </div>
+            <div class="text-xs text-white leading-snug">
+              Vendor Name on PMSGMBP Portal: <strong class="text-amber-300 font-bold">M. T. Construction</strong>
+            </div>
+          </div>
+          <div class="text-xs text-emerald-400 font-semibold mb-6 flex items-center space-x-2">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>PM Surya Ghar Registered &bull; WBSEDCL Partner Network</span>
+          </div>
+          <div class="flex space-x-3 text-sm">
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Quick Access</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="../about.html" class="hover:text-amber-400 transition">About Us</a></li>
+            <li><a href="../calculator.html" class="hover:text-amber-400 transition">Solar Calculator</a></li>
+            <li><a href="../pm-surya-ghar.html" class="hover:text-amber-400 transition">PM Surya Ghar Yojana</a></li>
+            <li><a href="../projects.html" class="hover:text-amber-400 transition">Our Projects</a></li>
+            <li><a href="../partner.html" class="hover:text-amber-400 transition">Solar Partner Programme</a></li>
+            <li><a href="../refer-and-earn.html" class="hover:text-amber-400 transition">Refer and Earn</a></li>
+            <li><a href="../careers.html" class="hover:text-amber-400 transition">Careers</a></li>
+            <li><a href="../sitemap.html" class="hover:text-amber-400 transition">HTML Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Solutions & Offerings -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Solutions</h4>
+          <ul class="space-y-2 text-xs mb-5">
+            <li><a href="../offerings/homes.html" class="hover:text-amber-400 transition">Residential Homes</a></li>
+            <li><a href="../offerings/commercial.html" class="hover:text-amber-400 transition">Commercial Solar</a></li>
+            <li><a href="../offerings/housing-societies.html" class="hover:text-amber-400 transition">Housing Societies</a></li>
+            <li><a href="../solutions/on-grid.html" class="hover:text-amber-400 transition">On-Grid Solar</a></li>
+            <li><a href="../solutions/off-grid.html" class="hover:text-amber-400 transition">Off-Grid Solar</a></li>
+            <li><a href="../solutions/hybrid.html" class="hover:text-amber-400 transition">Hybrid Solar</a></li>
+          </ul>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2">Knowledge</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="../blog/index.html" class="hover:text-amber-400 transition">Blog &amp; Articles</a></li>
+            <li><a href="../webinars.html" class="hover:text-amber-400 transition">Seminars &amp; Training (Upcoming Events)</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Offices -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Offices &amp; Contact</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start">
+              <i class="fa-solid fa-location-dot text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div>
+                <strong class="text-white block">Head Office:</strong>
+                Beside Diamond Harbour Police Station, Ward No. 10, Diamond Harbour, South 24 Pgs - 743331
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-building text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div>
+                <strong class="text-white block">Corporate Office:</strong>
+                Padmapukur more, P.O. and P.S.-Baruipur , Kolkata-700144, West Bengal
+              </div>
+            </li>
+            <li class="flex items-center text-[11px] text-slate-400 pt-0.5"><i class="fa-regular fa-clock text-amber-400 mr-2 flex-shrink-0"></i><span>Mon – Sun: 9:30 AM – 7:00 PM (All 7 Days Open)</span></li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-phone text-amber-400 mr-2.5"></i>
+              <a href="tel:+919083326210" class="hover:text-amber-400 transition font-medium">+91 9083326210</a>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div class="space-y-0.5">
+                <a href="mailto:contact@mtsolarbymtc.com" class="hover:text-amber-400 transition block">contact@mtsolarbymtc.com</a>
+                <a href="mailto:sales@mtsolarbymtc.com" class="hover:text-amber-400 transition block">sales@mtsolarbymtc.com</a>
+                <a href="mailto:mtsolarbymtc@gmail.com" class="hover:text-amber-400 transition block text-slate-400">mtsolarbymtc@gmail.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Legal Bottom Strip -->
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 M.T. Solar by MTC. All rights reserved. By M. T. Construction.</p>
+        <div class="flex flex-wrap gap-4 text-slate-400">
+          <a href="../legal/privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="../legal/terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="../legal/product-terms.html" class="hover:text-white transition">Product Terms</a>
+          <span>&bull;</span>
+          <a href="../legal/cancellation-policy.html" class="hover:text-white transition">Cancellation Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

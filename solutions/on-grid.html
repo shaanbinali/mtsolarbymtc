@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On-Grid Rooftop Solar (Net-Meter) - M.T. Solar by MTC</title>
+  <meta name="description" content="On-grid solar rooftop systems with WBSEDCL net-metering in West Bengal. Cut electricity bills with grid synchronization and maximum PM Surya Ghar subsidies.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"DM Sans"', 'sans-serif'],
+            display: ['"Poppins"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#182150',
+              navyDark: '#0f172a',
+              yellow: '#FFC800',
+              gold: '#EAB308',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+<body class="font-sans text-slate-800 antialiased bg-white selection:bg-amber-400 selection:text-slate-900">
+
+  <!-- Header -->
+      <header class="sticky top-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Brand Logo -->
+        <a href="../index.html" class="flex-shrink-0 flex items-center group">
+          <img src="../assets/images/logo.svg" alt="M.T. Solar by MTC Logo" class="h-12 w-auto transition-transform group-hover:scale-105">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden xl:flex items-center space-x-7 text-sm font-medium text-slate-700">
+          
+          <a href="../index.html" class="hover:text-brand-navy transition">Home</a>
+
+          <!-- Our Offerings Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-brand-navy py-2 transition focus:outline-none">
+              <span>Our Offerings</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 hidden group-hover:block animate-fade-in z-50">
+              <a href="../offerings/homes.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-house-chimney text-amber-500 mr-2 text-xs"></i>Residential
+              </a>
+              <a href="../offerings/commercial.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-building text-amber-500 mr-2 text-xs"></i>Commercial
+              </a>
+              <a href="../offerings/housing-societies.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-city text-amber-500 mr-2 text-xs"></i>Housing Societies
+              </a>
+            </div>
+          </div>
+
+          <!-- Solar Solutions Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-brand-navy py-2 transition focus:outline-none">
+              <span>Solar Solutions</span>
+              <i class="fa-solid fa-chevron-down text-[10px] text-slate-400 group-hover:rotate-180 transition-transform"></i>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 bg-white rounded-xl shadow-xl border border-slate-100 py-2 hidden group-hover:block animate-fade-in z-50">
+              <a href="../solutions/on-grid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-network-wired text-blue-500 mr-2 text-xs"></i>On-Grid Solar (Net-Meter)
+              </a>
+              <a href="../solutions/off-grid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-car-battery text-amber-500 mr-2 text-xs"></i>Off-Grid Solar (Battery)
+              </a>
+              <a href="../solutions/hybrid.html" class="block px-4 py-2.5 hover:bg-amber-50 hover:text-brand-navy text-slate-700 transition">
+                <i class="fa-solid fa-arrows-split-up-and-left text-green-500 mr-2 text-xs"></i>Hybrid Solar
+              </a>
+            </div>
+          </div>
+
+          <a href="../blog/index.html" class="hover:text-brand-navy transition">Blog</a>
+          <a href="../contact.html" class="hover:text-brand-navy transition">Contact</a>
+        </nav>
+
+        <!-- CTA Header Action -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <a href="../index.html#quote-form" class="bg-brand-navy hover:bg-slate-900 text-white font-medium py-2.5 px-6 rounded-lg text-sm transition shadow-sm hover:shadow flex items-center space-x-2">
+            <span>Get Free Quote</span>
+            <i class="fa-solid fa-arrow-right text-xs text-brand-yellow"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Hamburger -->
+        <div class="xl:hidden flex items-center space-x-3">
+          <a href="../index.html#quote-form" class="bg-brand-yellow text-brand-navy font-bold text-xs py-2 px-3 rounded-lg md:hidden">Free Quote</a>
+          <button id="mobile-menu-btn" aria-label="Toggle navigation" class="text-slate-800 p-2 focus:outline-none">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3">
+      <div class="grid grid-cols-2 gap-2 text-sm font-semibold">
+        <a href="../index.html" class="p-2.5 rounded-lg bg-amber-50 text-brand-navy">Home</a>
+        <a href="../calculator.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Solar Calculator</a>
+        <a href="../offerings/homes.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Residential</a>
+        <a href="../offerings/commercial.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Commercial</a>
+        <a href="../solutions/on-grid.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">On-Grid Solar</a>
+        <a href="../solutions/off-grid.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Off-Grid Solar</a>
+        <a href="../pm-surya-ghar.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">PM Surya Ghar</a>
+        <a href="../about.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">About MTC</a>
+        <a href="../projects.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Our Projects</a>
+        <a href="../blog/index.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Blog Hub</a>
+        <a href="../contact.html" class="p-2.5 rounded-lg hover:bg-slate-50 text-slate-700">Contact Us</a>
+      </div>
+      <div class="pt-2">
+        <a href="../index.html#quote-form" class="block w-full text-center bg-brand-navy text-white font-semibold py-3 rounded-lg text-sm">
+          Request Site Survey &amp; Quote
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-slate-900 text-white py-16 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <nav class="text-xs text-slate-400 mb-6 flex items-center space-x-2">
+        <a href="../index.html" class="hover:text-white">Home</a>
+        <span>/</span>
+        <span class="text-slate-400">Solar Solutions</span>
+        <span>/</span>
+        <span class="text-amber-400 font-medium">On-Grid Solar</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-bold rounded-full mb-4 inline-block border border-blue-400/30">Grid-Tied Net-Metering System</span>
+          <h1 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight mb-4">
+            On-Grid Solar Systems with WBSEDCL Net-Metering
+          </h1>
+          <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+            The most cost-effective solar setup for urban and suburban Bengal. Generate electricity during the day, export excess units to the WBSEDCL grid to turn your meter backward, and draw power freely at night with zero expensive battery banks required.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#survey-form" class="bg-brand-yellow text-brand-navy font-bold py-3 px-7 rounded-xl hover:bg-yellow-400 transition text-sm flex items-center gap-2 shadow-sm">
+              <i class="fa-solid fa-clipboard-check text-xs"></i>
+              <span>Free Site Survey</span>
+            </a>
+            <a href="../calculator.html" class="bg-white/10 hover:bg-white/20 text-white font-medium py-3 px-6 rounded-xl border border-white/20 transition text-sm">
+              Calculate Net-Meter Savings &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden border border-slate-700 shadow-2xl bg-slate-800/90">
+            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                 alt="On-grid solar installation with net-metering inverter" 
+                 class="w-full h-56 object-cover">
+            <div class="p-5 text-xs text-slate-300 space-y-3">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-700">
+                <span class="font-bold text-amber-400 uppercase text-[11px] tracking-wide">Bi-directional Meter</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 font-semibold">No Battery Required</span>
+              </div>
+              <p class="leading-relaxed text-slate-300">
+                Equipped with IP65 grid-tied inverters, anti-islanding safety protection, and real-time generation telemetry synced directly with WBSEDCL metering standards.
+              </p>
+              <div class="grid grid-cols-2 gap-2 pt-2 border-t border-slate-700/80 text-[11px]">
+                <div><span class="text-slate-400 block">Inverter Efficiency:</span><strong class="text-white">98%+ Peak Yield</strong></div>
+                <div><span class="text-slate-400 block">PM Surya Subsidy:</span><strong class="text-white">Up to ₹78,000</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How On-Grid Solar Works -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-3xl font-bold font-display text-brand-navy">How Grid-Tied Solar Functions</h2>
+        <p class="text-slate-600 text-sm mt-2">Zero battery replacement costs and effortless automatic synchronization.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+        
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div class="w-14 h-14 bg-amber-100 text-amber-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-solar-panel"></i>
+          </div>
+          <h3 class="font-bold font-display text-brand-navy text-base mb-1">1. Generation</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">High-efficiency solar panels capture daylight and generate Direct Current (DC) power.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div class="w-14 h-14 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="font-bold font-display text-brand-navy text-base mb-1">2. Inversion</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">Grid-tied string inverter converts DC to 230V/415V Alternating Current (AC) for appliances.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div class="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-house-signal"></i>
+          </div>
+          <h3 class="font-bold font-display text-brand-navy text-base mb-1">3. Self-Consumption</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">Your home directly utilizes solar electricity first, drastically reducing grid import.</p>
+        </div>
+
+        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div class="w-14 h-14 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">
+            <i class="fa-solid fa-arrows-spin"></i>
+          </div>
+          <h3 class="font-bold font-display text-brand-navy text-base mb-1">4. Net-Metering</h3>
+          <p class="text-slate-600 text-xs leading-relaxed">Extra power flows to the WBSEDCL grid. Your meter reverses and banking credits accrue.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs -->
+  <section class="py-16 bg-slate-50 border-t border-b border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-bold font-display text-brand-navy text-center mb-10">M.T. Solar On-Grid System Specifications</h2>
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <table class="w-full text-xs sm:text-sm text-left">
+          <thead class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
+            <tr>
+              <th class="p-4">Component</th>
+              <th class="p-4">Technical Standard</th>
+              <th class="p-4">Warranty</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Solar Modules</td>
+              <td class="p-4 text-slate-600">Mono-PERC / TOPCon Half-Cut (ALMM Approved Tier-1 Indian Modules)</td>
+              <td class="p-4 text-emerald-600 font-semibold">25 Years Linear Yield</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Solar Inverter</td>
+              <td class="p-4 text-slate-600">Grid-Tied On-Grid Inverter with Dual MPPT, IP65 Ingress, &amp; Wi-Fi Telemetry</td>
+              <td class="p-4 text-emerald-600 font-semibold">5 to 10 Years</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Mounting Structure</td>
+              <td class="p-4 text-slate-600">Hot-Dip Galvanized / Aluminium with 80+ Micron coating (Wind load 160+ kmph)</td>
+              <td class="p-4 text-emerald-600 font-semibold">10 Years Structural</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Electrical Safety</td>
+              <td class="p-4 text-slate-600">AC/DC SPD (Type-II), MCB/MCCB, Dual Chemical Earthing pits, Copper Cables</td>
+              <td class="p-4 text-emerald-600 font-semibold">5 Years Service</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-slate-800">Govt. Subsidy</td>
+              <td class="p-4 text-slate-600">Full eligibility under PM Surya Ghar Muft Bijli Yojana (Up to ₹78,000)</td>
+              <td class="p-4 text-emerald-600 font-semibold">Direct Bank Transfer</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subsidy Valid Till 31 March & Subsidy Amounts -->
+  <section class="py-14 bg-gradient-to-b from-amber-500/10 via-amber-500/5 to-white border-b border-amber-300/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-white rounded-2xl border-2 border-amber-400 p-6 sm:p-8 shadow-md">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-100 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-red-600 text-white font-bold text-xs uppercase tracking-wider mb-2">
+              <i class="fa-solid fa-clock"></i> Current Financial Cycle Tranche
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-brand-navy">
+              PM Surya Ghar Subsidy — Valid Till 31st March
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 mt-1">
+              Direct Benefit Transfer (DBT) credited straight to your bank account after WBSEDCL net-meter commissioning.
+            </p>
+          </div>
+          <div class="bg-amber-100 text-amber-900 border border-amber-300 rounded-xl px-4 py-2.5 text-center flex-shrink-0">
+            <span class="text-[10px] uppercase font-bold tracking-wider block text-amber-800">Subsidy Allocation</span>
+            <strong class="text-sm sm:text-base font-extrabold block text-slate-900">Valid Till 31 March</strong>
+          </div>
+        </div>
+
+        <!-- Subsidy Amounts Slabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 text-center">
+            <span class="text-xs uppercase font-bold text-slate-500 block mb-1">1 kW On-Grid System</span>
+            <div class="text-2xl sm:text-3xl font-extrabold font-display text-emerald-600 mb-1">₹ 30,000</div>
+            <p class="text-[11px] text-slate-500">Central DBT Subsidy</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 text-center">
+            <span class="text-xs uppercase font-bold text-slate-500 block mb-1">2 kW On-Grid System</span>
+            <div class="text-2xl sm:text-3xl font-extrabold font-display text-emerald-600 mb-1">₹ 60,000</div>
+            <p class="text-[11px] text-slate-500">Central DBT Subsidy</p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-amber-50 border-2 border-amber-400 text-center relative">
+            <span class="absolute -top-2.5 right-3 bg-amber-400 text-slate-950 text-[10px] font-bold uppercase px-2 py-0.5 rounded-full">Max Domestic</span>
+            <span class="text-xs uppercase font-bold text-amber-800 block mb-1">3 kW to 10 kW Systems</span>
+            <div class="text-2xl sm:text-3xl font-extrabold font-display text-emerald-700 mb-1">₹ 78,000</div>
+            <p class="text-[11px] text-slate-600 font-semibold">Flat Maximum Central Subsidy</p>
+          </div>
+        </div>
+
+        <!-- Additional State Govt Subsidy for SC/ST Note -->
+        <div class="mt-5 p-4 rounded-xl bg-emerald-50/80 border border-emerald-200 flex flex-col sm:flex-row items-start sm:items-center justify-between text-xs text-emerald-950 gap-3">
+          <div class="flex items-start gap-2.5">
+            <i class="fa-solid fa-award text-emerald-600 text-base mt-0.5"></i>
+            <div>
+              <strong class="font-bold block">Special State Government Subsidy for SC / ST Beneficiaries:</strong>
+              <span>Eligible Scheduled Caste &amp; Scheduled Tribe domestic consumers in West Bengal qualify for additional state departmental subsidies and tribal welfare clean energy grants in addition to the central ₹78,000 DBT.</span>
+            </div>
+          </div>
+          <a href="#survey-form" class="bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-2 px-4 rounded-lg whitespace-nowrap transition text-xs flex-shrink-0">
+            Check SC/ST Eligibility &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Free Local Site Survey Form -->
+  <section id="survey-form" class="py-16 bg-white border-t border-slate-200">
+    <div id="on-grid-quote"></div>
+    <div id="quote-form"></div>
+    <div class="max-w-xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8">
+        <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full mb-3 inline-block">LOCAL SITE SURVEY</span>
+        <h2 class="text-2xl sm:text-3xl font-bold font-display text-brand-navy">Request a Free Local Site Survey</h2>
+        <p class="text-slate-600 text-xs sm:text-sm mt-1">Our senior engineer visits your rooftop for structural measurements, shadow analysis, and WBSEDCL net-metering feasibility.</p>
+      </div>
+      <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-md">
+        <form data-lead-form="true" data-form-type="site_survey" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Full Name</label>
+            <input type="text" name="name" required placeholder="Your full name" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm focus:outline-none focus:border-amber-400">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">WhatsApp / Phone Number</label>
+            <input type="tel" name="phone" required pattern="[0-9]{10}" placeholder="10-digit number" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm focus:outline-none focus:border-amber-400">
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Area PIN Code (West Bengal)</label>
+              <input type="text" name="pincode" pattern="[0-9]{6}" required placeholder="e.g. 743331" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm focus:outline-none focus:border-amber-400">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Monthly Electricity Bill</label>
+              <input type="text" name="monthly_bill" required placeholder="e.g. ₹3,500" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm focus:outline-none focus:border-amber-400">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Rooftop Type</label>
+            <select name="roof_type" class="w-full bg-white border border-slate-300 rounded-lg p-3 text-sm focus:outline-none focus:border-amber-400">
+              <option value="rcc_terrace">RCC Concrete Terrace / Flat Roof</option>
+              <option value="tin_shed">Tin Shed / Metal Roofing</option>
+              <option value="asbestos">Asbestos / Tiled Roof</option>
+              <option value="commercial">Commercial / Factory Shed</option>
+            </select>
+          </div>
+          <button type="submit" class="w-full bg-brand-navy hover:bg-slate-900 text-white font-bold py-3.5 rounded-xl transition text-sm flex items-center justify-center gap-2 shadow-sm">
+            <span>Book Free Site Survey</span>
+            <i class="fa-solid fa-arrow-right text-xs text-brand-yellow"></i>
+          </button>
+          <p class="text-[11px] text-center text-slate-500 mt-2">Zero obligation. Direct engineering visit coordinated from Diamond Harbour &amp; Baruipur service centers.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+          <footer class="bg-slate-900 text-slate-300 pt-16 pb-8 border-t-4 border-brand-yellow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="../assets/images/logo.svg" alt="M.T. Solar by MTC" class="h-10 w-auto bg-white p-1 rounded">
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
+            M.T. Solar by MTC is the rooftop solar vertical by <strong>M. T. Construction</strong>, building on 25 years of electrical government contracting and WBSEDCL/WBSETCL enlistment foundation in West Bengal.
+          </p>
+          <div class="p-3 rounded-xl bg-slate-800/90 border border-amber-400/40 mb-5 max-w-sm">
+            <div class="text-[11px] uppercase tracking-wider text-amber-400 font-bold mb-1 flex items-center gap-1.5">
+              <i class="fa-solid fa-award"></i> NATIONAL PORTAL EMPANELED VENDOR
+            </div>
+            <div class="text-xs text-white leading-snug">
+              Vendor Name on PMSGMBP Portal: <strong class="text-amber-300 font-bold">M. T. Construction</strong>
+            </div>
+          </div>
+          <div class="text-xs text-emerald-400 font-semibold mb-6 flex items-center space-x-2">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>PM Surya Ghar Registered &bull; WBSEDCL Partner Network</span>
+          </div>
+          <div class="flex space-x-3 text-sm">
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-amber-400 hover:text-slate-900 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Access -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Quick Access</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="../about.html" class="hover:text-amber-400 transition">About Us</a></li>
+            <li><a href="../calculator.html" class="hover:text-amber-400 transition">Solar Calculator</a></li>
+            <li><a href="../pm-surya-ghar.html" class="hover:text-amber-400 transition">PM Surya Ghar Yojana</a></li>
+            <li><a href="../projects.html" class="hover:text-amber-400 transition">Our Projects</a></li>
+            <li><a href="../partner.html" class="hover:text-amber-400 transition">Solar Partner Programme</a></li>
+            <li><a href="../refer-and-earn.html" class="hover:text-amber-400 transition">Refer and Earn</a></li>
+            <li><a href="../careers.html" class="hover:text-amber-400 transition">Careers</a></li>
+            <li><a href="../sitemap.html" class="hover:text-amber-400 transition">HTML Sitemap</a></li>
+          </ul>
+        </div>
+
+        <!-- Solutions & Offerings -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Solutions</h4>
+          <ul class="space-y-2 text-xs mb-5">
+            <li><a href="../offerings/homes.html" class="hover:text-amber-400 transition">Residential Homes</a></li>
+            <li><a href="../offerings/commercial.html" class="hover:text-amber-400 transition">Commercial Solar</a></li>
+            <li><a href="../offerings/housing-societies.html" class="hover:text-amber-400 transition">Housing Societies</a></li>
+            <li><a href="../solutions/on-grid.html" class="hover:text-amber-400 transition">On-Grid Solar</a></li>
+            <li><a href="../solutions/off-grid.html" class="hover:text-amber-400 transition">Off-Grid Solar</a></li>
+            <li><a href="../solutions/hybrid.html" class="hover:text-amber-400 transition">Hybrid Solar</a></li>
+          </ul>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-2">Knowledge</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="../blog/index.html" class="hover:text-amber-400 transition">Blog &amp; Articles</a></li>
+            <li><a href="../webinars.html" class="hover:text-amber-400 transition">Seminars &amp; Training (Upcoming Events)</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Offices -->
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider mb-4">Offices &amp; Contact</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li class="flex items-start">
+              <i class="fa-solid fa-location-dot text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div>
+                <strong class="text-white block">Head Office:</strong>
+                Beside Diamond Harbour Police Station, Ward No. 10, Diamond Harbour, South 24 Pgs - 743331
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-building text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div>
+                <strong class="text-white block">Corporate Office:</strong>
+                Padmapukur more, P.O. and P.S.-Baruipur , Kolkata-700144, West Bengal
+              </div>
+            </li>
+            <li class="flex items-center text-[11px] text-slate-400 pt-0.5"><i class="fa-regular fa-clock text-amber-400 mr-2 flex-shrink-0"></i><span>Mon – Sun: 9:30 AM – 7:00 PM (All 7 Days Open)</span></li>
+            <li class="flex items-center">
+              <i class="fa-solid fa-phone text-amber-400 mr-2.5"></i>
+              <a href="tel:+919083326210" class="hover:text-amber-400 transition font-medium">+91 9083326210</a>
+            </li>
+            <li class="flex items-start">
+              <i class="fa-solid fa-envelope text-amber-400 mt-1 mr-2.5 flex-shrink-0"></i>
+              <div class="space-y-0.5">
+                <a href="mailto:contact@mtsolarbymtc.com" class="hover:text-amber-400 transition block">contact@mtsolarbymtc.com</a>
+                <a href="mailto:sales@mtsolarbymtc.com" class="hover:text-amber-400 transition block">sales@mtsolarbymtc.com</a>
+                <a href="mailto:mtsolarbymtc@gmail.com" class="hover:text-amber-400 transition block text-slate-400">mtsolarbymtc@gmail.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Legal Bottom Strip -->
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 M.T. Solar by MTC. All rights reserved. By M. T. Construction.</p>
+        <div class="flex flex-wrap gap-4 text-slate-400">
+          <a href="../legal/privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="../legal/terms-of-service.html" class="hover:text-white transition">Terms of Service</a>
+          <span>&bull;</span>
+          <a href="../legal/product-terms.html" class="hover:text-white transition">Product Terms</a>
+          <span>&bull;</span>
+          <a href="../legal/cancellation-policy.html" class="hover:text-white transition">Cancellation Policy</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/lead-form.js"></script>
+</body>
+</html>
