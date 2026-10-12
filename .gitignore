@@ -1,6 +1,17 @@
+# OS artifacts
 .DS_Store
+Thumbs.db
+
+# Node dependencies (Prevent Cloudflare upload)
+node_modules/
+package-lock.json
+.wrangler/
+
+# Python cache
 __pycache__/
 *.pyc
+
+# Local environment & IDE
 .env
 .idea/
 .vscode/
