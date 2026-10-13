@@ -132,7 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(payload),
         });
 
-        const result = await response.json();
+        let result = {};
+        try {
+          result = await response.json();
+        } catch (jsonErr) {
+          result = { error: `Server returned status ${response.status} (${response.statusText})` };
+        }
 
         if (response.ok && result.success) {
           if (window.showToast) {
@@ -156,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }, 3500);
         } else {
-          const errMsg = result.error || 'Unable to submit your request right now. Please call +91 9083326210.';
+          const errMsg = result.error || result.message || `Unable to submit right now (Status ${response.status}). Please call +91 9083326210.`;
           if (window.showToast) {
             window.showToast(errMsg, true);
           }
@@ -167,8 +172,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (err) {
         console.error('Lead submission network error:', err);
+        const userMsg = err.message ? `Connection error (${err.message}). Please retry or call +91 9083326210.` : 'Network error. Please check your internet or call our office directly at +91 9083326210.';
         if (window.showToast) {
-          window.showToast('Network error. Please check your internet or call our office directly at +91 9083326210.', true);
+          window.showToast(userMsg, true);
         }
         if (submitBtn) {
           submitBtn.innerHTML = originalHtml;
