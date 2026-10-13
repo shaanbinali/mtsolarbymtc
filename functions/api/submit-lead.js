@@ -170,9 +170,10 @@ export async function onRequestPost(context) {
  * - WEB3FORMS_ACCESS_KEY (https://web3forms.com - instant free key)
  */
 async function dispatchEmailNotification(env, lead) {
-  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'mtsolarbymtc@gmail.com, contact@mtsolarbymtc.com, sales@mtsolarbymtc.com')
+  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'mtsolarbymtc@gmail.com')
     .split(',')
-    .map(e => e.trim());
+    .map(e => e.trim())
+    .filter(e => e.length > 0);
 
   const formTypeTitles = {
     site_survey: 'Rooftop Site Survey & Feasibility',
