@@ -170,7 +170,7 @@ export async function onRequestPost(context) {
  * - WEB3FORMS_ACCESS_KEY (https://web3forms.com - instant free key)
  */
 async function dispatchEmailNotification(env, lead) {
-  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'mtsolarbymtc@gmail.com, contact@mtsolarbymtc.com')
+  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'mtsolarbymtc@gmail.com, contact@mtsolarbymtc.com, sales@mtsolarbymtc.com')
     .split(',')
     .map(e => e.trim());
 
@@ -255,19 +255,38 @@ async function dispatchEmailNotification(env, lead) {
   // 1. Resend API Integration (https://resend.com)
   if (env.RESEND_API_KEY) {
     try {
-      await fetch('https://api.resend.com/emails', {
+      const resendPayload = {
+        from: env.FROM_EMAIL || 'M.T. Solar <onboarding@resend.dev>',
+        to: recipientEmails,
+        subject: subject,
+        html: htmlContent,
+      };
+
+      const res = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${env.RESEND_API_KEY}`,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          from: env.FROM_EMAIL || 'M.T. Solar <onboarding@resend.dev>',
-          to: recipientEmails,
-          subject: subject,
-          html: htmlContent,
-        }),
+        body: JSON.stringify(resendPayload),
       });
+
+      // If Resend returns an error because multiple recipients aren't allowed on unverified test domains,
+      // fallback and send to the primary account email so you never miss a lead!
+      if (!res.ok && recipientEmails.length > 1) {
+        console.warn('Resend batch failed, retrying with primary email:', recipientEmails[0]);
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...resendPayload,
+            to: [recipientEmails[0]],
+          }),
+        });
+      }
       return;
     } catch (e) {
       console.error('Resend dispatch failed:', e);
