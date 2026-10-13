@@ -24,6 +24,21 @@ export async function onRequestGet(context) {
   }
 
   try {
+    // Ensure table exists so query never fails even on fresh/empty database
+    await context.env.DB.prepare(`
+      CREATE TABLE IF NOT EXISTS leads (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        lead_id TEXT UNIQUE,
+        form_type TEXT,
+        name TEXT,
+        phone TEXT,
+        pincode TEXT,
+        source_page TEXT,
+        details_json TEXT,
+        created_at TEXT
+      );
+    `).run();
+
     const { results } = await context.env.DB.prepare(`
       SELECT id, lead_id, form_type, name, phone, pincode, source_page, details_json, created_at
       FROM leads
