@@ -170,7 +170,7 @@ export async function onRequestPost(context) {
  * - WEB3FORMS_ACCESS_KEY (https://web3forms.com - instant free key)
  */
 async function dispatchEmailNotification(env, lead) {
-  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'mtsolarbymtc@gmail.com')
+  const recipientEmails = (env.LEAD_NOTIFICATION_EMAILS || 'contact@mtsolarbymtc.com, mtsolarbymtc@gmail.com')
     .split(',')
     .map(e => e.trim())
     .filter(e => e.length > 0);
@@ -256,37 +256,42 @@ async function dispatchEmailNotification(env, lead) {
   // 1. Resend API Integration (https://resend.com)
   if (env.RESEND_API_KEY) {
     try {
-      const resendPayload = {
-        from: env.FROM_EMAIL || 'M.T. Solar <onboarding@resend.dev>',
-        to: recipientEmails,
-        subject: subject,
-        html: htmlContent,
-      };
+      const fromAddr = env.FROM_EMAIL || 'M.T. Solar <contact@mtsolarbymtc.com>';
+      for (const email of recipientEmails) {
+        try {
+          const res = await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              from: fromAddr,
+              to: [email],
+              subject: subject,
+              html: htmlContent,
+            }),
+          });
 
-      const res = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(resendPayload),
-      });
-
-      // If Resend returns an error because multiple recipients aren't allowed on unverified test domains,
-      // fallback and send to the primary account email so you never miss a lead!
-      if (!res.ok && recipientEmails.length > 1) {
-        console.warn('Resend batch failed, retrying with primary email:', recipientEmails[0]);
-        await fetch('https://api.resend.com/emails', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${env.RESEND_API_KEY}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...resendPayload,
-            to: [recipientEmails[0]],
-          }),
-        });
+          // If custom sender domain failed (e.g. unverified in Resend), fallback to onboarding@resend.dev
+          if (!res.ok) {
+            await fetch('https://api.resend.com/emails', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                from: 'M.T. Solar <onboarding@resend.dev>',
+                to: [email],
+                subject: subject,
+                html: htmlContent,
+              }),
+            });
+          }
+        } catch (singleErr) {
+          console.error(`Resend dispatch to ${email} failed:`, singleErr);
+        }
       }
       return;
     } catch (e) {
@@ -304,7 +309,7 @@ async function dispatchEmailNotification(env, lead) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          sender: { name: 'M.T. Solar System', email: env.FROM_EMAIL || recipientEmails[0] },
+          sender: { name: 'M.T. Solar System', email: env.FROM_EMAIL || 'contact@mtsolarbymtc.com' },
           to: recipientEmails.map(email => ({ email })),
           subject: subject,
           htmlContent: htmlContent,
