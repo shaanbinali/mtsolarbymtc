@@ -1,7 +1,20 @@
 # Cloudflare Pages Caching & Performance Headers
 
-# Long-term caching for immutable assets (CSS, JS, SVG, Fonts)
-/assets/*
+# CSS and JS bundles: revalidate so style & script updates take effect immediately
+/assets/css/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+/assets/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Long-term caching for immutable assets (Images, Fonts, Media)
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/assets/webfonts/*
   Cache-Control: public, max-age=31536000, immutable
   X-Content-Type-Options: nosniff
 
