@@ -7,10 +7,23 @@
   --color-brand-navy: #182150;
   --color-brand-navyDark: #0f172a;
   --color-brand-navyLight: #262f5e;
-  --color-brand-yellow: #FFC800;
-  --color-brand-gold: #EAB308;
+  --color-brand-yellow: #a7e92f;
+  --color-brand-gold: #a7e92f;
   --color-brand-accent: #38bdf8;
   --color-brand-slate: #f8fafc;
+
+  --color-amber-50: #f7fee7;
+  --color-amber-100: #ecfccb;
+  --color-amber-200: #d9f99d;
+  --color-amber-300: #bef264;
+  --color-amber-400: #a7e92f;
+  --color-amber-500: #84cc16;
+  --color-amber-600: #65a30d;
+  --color-amber-700: #4d7c0f;
+  --color-amber-800: #3f6212;
+  --color-amber-900: #365314;
+  --color-yellow-400: #93d424;
+  --color-yellow-500: #84cc16;
 }
 
 @source "../../**/*.html";
@@ -22,8 +35,8 @@
   --font-display: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --color-navy: #182150;
   --color-navy-dark: #0f172a;
-  --color-yellow: #FFC800;
-  --color-amber-light: #fef3c7;
+  --color-yellow: #a7e92f;
+  --color-amber-light: #f7fee7;
   --color-slate-surface: #f8fafc;
 }
 
@@ -47,7 +60,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #a7e92f;
   outline-offset: 2px;
 }
 
@@ -88,7 +101,7 @@ textarea:focus-visible {
 
 /* Form controls styling */
 input[type="range"] {
-  accent-color: #f59e0b;
+  accent-color: #a7e92f;
 }
 
 /* Reduced motion preference */

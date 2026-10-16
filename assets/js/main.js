@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 4. Live Scheme Urgency Countdown Timer (Tranche Allocation Deadline)
+  // 4. Live PM Surya Ghar Scheme Urgency Countdown Timer (Official Deadline: 31 March 2027)
   function initSchemeCountdown() {
     const daysEls = document.querySelectorAll('.timer-days, #scheme-timer-days');
     const hoursEls = document.querySelectorAll('.timer-hours, #scheme-timer-hours');
@@ -113,18 +113,8 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Target deadline: End of current month 23:59:59 IST
-    // If less than 3 days remain, roll forward to end of following month
-    function getTargetDeadline() {
-      const now = new Date();
-      let target = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-      if (target.getTime() - now.getTime() < 3 * 24 * 60 * 60 * 1000) {
-        target = new Date(now.getFullYear(), now.getMonth() + 2, 0, 23, 59, 59);
-      }
-      return target;
-    }
-
-    const targetDate = getTargetDeadline();
+    // Official PM Surya Ghar Muft Bijli Yojana national scheme allocation deadline: 31 March 2027 23:59:59 IST
+    const targetDate = new Date('2027-03-31T23:59:59+05:30');
 
     function updateTimer() {
       const now = new Date();
@@ -138,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const minutes = Math.floor((diff / (1000 * 60)) % 60);
       const seconds = Math.floor((diff / 1000) % 60);
 
-      const dStr = String(days).padStart(2, '0');
+      const dStr = String(days);
       const hStr = String(hours).padStart(2, '0');
       const mStr = String(minutes).padStart(2, '0');
       const sStr = String(seconds).padStart(2, '0');

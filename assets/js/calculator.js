@@ -121,8 +121,10 @@ function calculateSolarPlan(monthlyBill, category = 'domestic_rural') {
   const remainingUnits = Math.max(0, monthlyUnits - monthlyGenUnits);
   const newMonthlyBill = computeBillFromUnits(remainingUnits, category);
 
-  // Net monthly savings
-  const potentialMonthlySavings = Math.max(0, monthlyBill - newMonthlyBill);
+  // Net monthly savings (or monthly solar generation value if current bill is 0)
+  const potentialMonthlySavings = monthlyBill > 0
+    ? Math.max(0, monthlyBill - newMonthlyBill)
+    : Math.round(computeBillFromUnits(monthlyGenUnits, category));
 
   // 25-Year Lifetime Savings (300 months)
   const lifetimeSavings = potentialMonthlySavings * 300;
@@ -130,7 +132,7 @@ function calculateSolarPlan(monthlyBill, category = 'domestic_rural') {
   // Payback period (years)
   const paybackYears = netInvestment > 0 && potentialMonthlySavings > 0
     ? (netInvestment / (potentialMonthlySavings * 12)).toFixed(1)
-    : '3.5';
+    : '5.8';
 
   // Area required: ~100 sq.ft per kW
   const roofAreaReq = Math.round(recommendedKW * 100);

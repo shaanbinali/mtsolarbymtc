@@ -209,9 +209,9 @@ async function dispatchEmailNotification(env, lead) {
     <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px;">
       <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);">
         
-        <div style="background-color: #0b1528; padding: 20px 24px; border-bottom: 3px solid #fbbf24;">
+        <div style="background-color: #0b1528; padding: 20px 24px; border-bottom: 3px solid #a7e92f;">
           <h2 style="color: #ffffff; margin: 0; font-size: 18px; font-weight: 700; letter-spacing: 0.5px;">M.T. SOLAR BY MTC</h2>
-          <p style="color: #fbbf24; margin: 4px 0 0; font-size: 13px; font-weight: 600;">NEW WEBSITE INQUIRY RECEIVED</p>
+          <p style="color: #a7e92f; margin: 4px 0 0; font-size: 13px; font-weight: 600;">NEW WEBSITE INQUIRY RECEIVED</p>
         </div>
 
         <div style="padding: 24px;">

@@ -6,8 +6,8 @@
   --font-display: 'Space Grotesk', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --color-navy: #141c3a;
   --color-navy-dark: #0d1326;
-  --color-yellow: #f59e0b;
-  --color-amber-light: #fef3c7;
+  --color-yellow: #a7e92f;
+  --color-amber-light: #f7fee7;
   --color-slate-surface: #f8fafc;
 }
 
@@ -31,7 +31,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid #f59e0b;
+  outline: 2px solid #a7e92f;
   outline-offset: 2px;
 }
 
@@ -72,7 +72,7 @@ textarea:focus-visible {
 
 /* Form controls styling */
 input[type="range"] {
-  accent-color: #f59e0b;
+  accent-color: #a7e92f;
 }
 
 /* Reduced motion preference */
